@@ -6,4 +6,5 @@ Build daily habits, manage your tasks, and watch your consistency grow into a st
 - Watch your streaks grow and never want to break them
 - Get motivated notifications that push you, not annoy you
 - See your weekly progress and actually feel good about it
-**Productivity isn't about doing more. It's about showing up every day. Stride helps you do exactly that.**
+- 
+##### **Productivity isn't about doing more. It's about showing up every day. Stride helps you do exactly that.**
