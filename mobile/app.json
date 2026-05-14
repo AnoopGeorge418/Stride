@@ -38,7 +38,33 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "../assets/fonts/Playfair_Black.ttf",
+            "../assets/fonts/Playfair_Bold.ttf",
+            "../assets/fonts/Playfair_ExtraBold.ttf",
+            "../assets/fonts/Playfair_Light.ttf",
+            "../assets/fonts/Playfair_Medium.ttf",
+            "../assets/fonts/Playfair_Regular.ttf",
+  
+            "../assets/fonts/PlayfairDisplay_Black.ttf",
+            "../assets/fonts/PlayfairDisplay_Bold.ttf",
+            "../assets/fonts/PlayfairDisplay_ExtraBold.ttf",
+            "../assets/fonts/PlayfairDisplay_Medium.ttf",
+            "../assets/fonts/PlayfairDisplay_Regular.ttf"
+          ]
+        }
+      ],
+      [
+        "expo-image",
+        {
+          "disableLibdav1d": true
+        }
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
