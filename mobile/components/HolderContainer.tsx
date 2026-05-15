@@ -1,5 +1,4 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Image } from "expo-image"
 import { router } from "expo-router";
 import { TouchableOpacity, View } from "react-native"
 
@@ -10,7 +9,7 @@ type HolderContainerProps = {
   iconName: keyof typeof Ionicons.glyphMap;
 }
 
-const HolderContainer = ({ width = 44, height = 44, iconName
+const HolderContainer = ({ width = 45, height = 55, iconName
 } : HolderContainerProps ) => {
   return (
     <TouchableOpacity onPress={() => router.push('/(tabs)/tasks')}>

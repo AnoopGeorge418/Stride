@@ -3,11 +3,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
 
 import ProfileImageHolder from "@/components/ProfileImageHolder";
-import CalenderSet from "@/components/Calender";
+import { CalenderStrip } from "@/components/Calender";
 import SearchBar from "@/components/SearchBar";
+import { useState } from "react";
 
 const Tasks = () => {
 
+  const [query, setQuery] = useState("")
+  
   const username = "Anoop";
   const imageFromCdn = "https://i.pinimg.com/736x/72/4b/26/724b2657664667d115d5d2d899111533.jpg";
 
@@ -51,9 +54,9 @@ const Tasks = () => {
       </View>
 
       {/*Calender*/}
-      <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 11 }}>
-        <SearchBar placeholder="Search for tasks, habits and more..." />
-        <CalenderSet />
+      <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
+        <SearchBar placeholder="Search for tasks, habits and more..." value={query} onChangeText={setQuery}/>
+        <CalenderStrip />
       </View>
 
     </View>
