@@ -1,27 +1,72 @@
-import { TextInput, TouchableOpacity, View } from "react-native"
-import Ionicons from "@expo/vector-icons/Ionicons";
-import HolderContainer from "./HolderContainer";
+import { TextInput, TouchableOpacity, View, StyleSheet } from "react-native"
+import Ionicons from "@expo/vector-icons/Ionicons"
+import HolderContainer from "./HolderContainer"
+import { useRef } from "react"
 
 type SearchBarProps = {
-  width?: number;
-  height?: number;
-  placeholder: string;
-  backgroundColor?: string;
-  textColor?: string;
+  width?: number
+  height?: number
+  placeholder: string
+  backgroundColor?: string
+  textColor?: string
+  value: string
+  onChangeText: (text: string) => void
 }
 
-const SearchBar = ({ width = 378, height = 44, backgroundColor = 'lightgray', textColor = 'gray', placeholder } : SearchBarProps ) => {
+const SearchBar = ({
+  width = 378,
+  height = 55,
+  backgroundColor = 'lightgray',
+  textColor = 'gray',
+  placeholder,
+  value,
+  onChangeText,
+}: SearchBarProps) => {
+  const inputRef = useRef<TextInput>(null)
+
   return (
-    <View style= {{ display: 'flex', flexDirection: 'row', gap: 4 }}>
-      <TouchableOpacity style={{ width: width, height: height, backgroundColor: backgroundColor, borderRadius: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', paddingHorizontal: 10}}>
-        <TextInput placeholder={placeholder} placeholderTextColor={textColor} style={{ fontFamily: 'playfair_Regular', fontSize: 14 }} />
-        <Ionicons size={16} color={'gray'} name="search" />
+    <View style={{ flexDirection: 'row', gap: 4 }}>
+      {/* Tap the whole bar → focus the input */}
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => inputRef.current?.focus()}
+        style={[styles.bar, { width, height, backgroundColor }]}
+      >
+        <Ionicons size={20} color={textColor} name="search" />
+
+        <TextInput
+          ref={inputRef}
+          value={value}
+          onChangeText={onChangeText}
+          placeholder={placeholder}
+          placeholderTextColor={textColor}
+          style={[styles.input, { color: textColor }]}
+          disableFullscreenUI={true}
+          underlineColorAndroid="transparent"
+        />
       </TouchableOpacity>
 
-      <HolderContainer iconName="filter"/>
+      <HolderContainer iconName="filter" />
     </View>
-   
   )
 }
 
-export default SearchBar;
+const styles = StyleSheet.create({
+  bar: {
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    gap: 8,
+  },
+  input: {
+    flex: 1,          
+    height: '100%',   
+    fontFamily: 'playfair_Light',
+    fontSize: 18,
+    textAlignVertical: 'center',
+    includeFontPadding: false,
+  },
+})
+
+export default SearchBar
