@@ -32,6 +32,8 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
+    "@repo/eslint-config": "*",
+    "eslint": "10.9.1",
     "@babel/core": "^7.20.0",
     "@babel/plugin-transform-react-jsx": "^7.20.0",
     "@types/react": "~19.3.0",
@@ -45,7 +47,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "eslint . --max-warnings 0"
   },
   "private": true
 }
