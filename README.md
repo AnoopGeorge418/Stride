@@ -1,4 +1,5 @@
 # **Stride - Your productivity, at hand**
+
 Stride helps you plan your day, build habits that stick, and see your progress over time.
 
 **What you can do**
