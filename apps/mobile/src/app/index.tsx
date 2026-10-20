@@ -1,10 +1,11 @@
-import { Text, View } from 'react-native';
-import './global.css';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Index = () => {
 	return (
 		<View className="flex-1 items-center justify-center bg-white p-4">
-			<Text className="text-2xl font-bold text-blue-500 mb-4 bg-red-100 p-4 rounded-lg">
+			<Text
+				style={styles.font}
+				className="text-xl bg-red-50 p-4 rounded-xl">
 				Welcome to Expo React Native - Nativewind!
 			</Text>
 		</View>
@@ -12,3 +13,8 @@ const Index = () => {
 };
 
 export default Index;
+
+// styles
+const styles = StyleSheet.create({
+	font: { fontFamily: 'Lora-Italic', fontSize: 20 },
+});
