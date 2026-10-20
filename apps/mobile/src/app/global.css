@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+    /*Typography*/
+    --font-lora: Lora, serif;
+    --font-mono: GeistMono, monospace;
 
+    /*Colors*/
+    --color-primary-50: #f0fdf4;
+}
