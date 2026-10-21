@@ -2,11 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-    /*Typography*/
-    --font-lora: Lora, serif;
-    --font-mono: GeistMono, monospace;
+@layer base {
+  :root {
+    --canvas: #F8F9FA;
+    --surface-default: #FFFFFF;
+    --surface-container-low: #F3F4F6;
+    --surface-container-high: #E5E7EB;
+    --surface-glass: rgba(255, 255, 255, 0.85);
+    --card-highlight: #FFF9F4;
 
-    /*Colors*/
-    --color-primary-50: #f0fdf4;
+    --text-primary: #121212;
+    --text-secondary: #4B5563;
+    --text-muted: #9CA3AF;
+    --text-inverse: #FFFFFF;
+
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-default: rgba(0, 0, 0, 0.12);
+    --border-focused: #121212;
+
+    --accent-primary: #121212;
+    --active-pill: #18181B;
+    --cyan: #0EA5E9;
+    --emerald: #10B981;
+    --amber: #F59E0B;
+    --purple: #8B5CF6;
+    --rose: #EF4444;
+
+    --badge-completed-bg: #ECFDF5;
+    --badge-completed-text: #065F46;
+    --badge-completed-border: #A7F3D0;
+
+    --badge-in-progress-bg: #FFFBEB;
+    --badge-in-progress-text: #92400E;
+    --badge-in-progress-border: #FDE68A;
+
+    --badge-scheduled-bg: #EFF6FF;
+    --badge-scheduled-text: #1E40AF;
+    --badge-scheduled-border: #BFDBFE;
+
+    --badge-high-bg: #FEF2F2;
+    --badge-high-text: #991B1B;
+    --badge-high-border: #FECACA;
+  }
+
+  .dark {
+    --canvas: #0B0C0E;
+    --surface-default: #121418;
+    --surface-container-low: #16181D;
+    --surface-container-high: #1E2229;
+    --surface-glass: rgba(22, 24, 29, 0.88);
+    --card-highlight: #1A1D24;
+
+    --text-primary: #F3F4F6;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+    --text-inverse: #121212;
+
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-default: rgba(255, 255, 255, 0.12);
+    --border-focused: #F3F4F6;
+
+    --accent-primary: #FFFFFF;
+    --active-pill: #FFFFFF;
+    --cyan: #38BDF8;
+    --emerald: #34D399;
+    --amber: #FBBF24;
+    --purple: #A78BFA;
+    --rose: #F87171;
+
+    --badge-completed-bg: rgba(16, 185, 129, 0.15);
+    --badge-completed-text: #34D399;
+    --badge-completed-border: rgba(16, 185, 129, 0.3);
+
+    --badge-in-progress-bg: rgba(245, 158, 11, 0.15);
+    --badge-in-progress-text: #FBBF24;
+    --badge-in-progress-border: rgba(245, 158, 11, 0.3);
+
+    --badge-scheduled-bg: rgba(59, 130, 246, 0.15);
+    --badge-scheduled-text: #60A5FA;
+    --badge-scheduled-border: rgba(59, 130, 246, 0.3);
+
+    --badge-high-bg: rgba(239, 68, 68, 0.15);
+    --badge-high-text: #F87171;
+    --badge-high-border: rgba(239, 68, 68, 0.3);
+  }
 }
+
+@theme {
+  --font-lora: Lora, serif;
+  --font-mono: GeistMono, monospace;
+
+  /* Map theme variables to Tailwind utilities */
+  --color-canvas: var(--canvas);
+  --color-surface-default: var(--surface-default);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-glass: var(--surface-glass);
+  --color-card-highlight: var(--card-highlight);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-border-default: var(--border-default);
+  --color-border-focused: var(--border-focused);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-active-pill: var(--active-pill);
+  --color-cyan: var(--cyan);
+  --color-emerald: var(--emerald);
+  --color-amber: var(--amber);
+  --color-purple: var(--purple);
+  --color-rose: var(--rose);
+}
+
