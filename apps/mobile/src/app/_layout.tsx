@@ -18,6 +18,7 @@ import {
 import './global.css';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -62,20 +63,22 @@ const RootLayout = () => {
 		return null;
 	}
 
-	return (
-		<ThemeProvider>
-			<Stack
-				screenOptions={{
-					headerShown: false,
-					animation: 'ios_from_right',
-					animationDuration: 300,
-					animationMatchesGesture: true,
-					statusBarAnimation: 'fade',
-					statusBarHidden: true,
-				}}>
-				<Stack.Screen name="index" />
-			</Stack>
-		</ThemeProvider>
+    return (
+        <SafeAreaProvider>
+            <ThemeProvider>
+     			<Stack
+    				screenOptions={{
+       					headerShown: false,
+       					animation: 'ios_from_right',
+       					animationDuration: 300,
+       					animationMatchesGesture: true,
+       					statusBarAnimation: 'fade',
+       					statusBarHidden: true,
+    				}}>
+    				<Stack.Screen name="index" />
+     			</Stack>
+    		</ThemeProvider>
+        </SafeAreaProvider>
 	);
 };
 
