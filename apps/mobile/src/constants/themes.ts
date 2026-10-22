@@ -9,8 +9,8 @@ export const Themes = {
 			cardBackground: '#FFFFFF',
 			cardBackgroundHover: '#F9FAFB',
 			mutedBackground: '#F3F4F6',
-            subtleBackground: '#E5E7EB',
-			buttonBackground: '#000000'
+			subtleBackground: '#E5E7EB',
+			buttonBackground: '#000000',
 		},
 		typography: {
 			mainHeading: '#121212',
@@ -50,8 +50,8 @@ export const Themes = {
 			cardBackground: '#121212',
 			cardBackgroundHover: '#1E1E1E',
 			mutedBackground: '#1F2937',
-            subtleBackground: '#2C2C2C',
-			buttonBackground: '#ffffff'
+			subtleBackground: '#2C2C2C',
+			buttonBackground: '#ffffff',
 		},
 		typography: {
 			mainHeading: '#F9FAFB',
