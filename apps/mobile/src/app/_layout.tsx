@@ -63,22 +63,22 @@ const RootLayout = () => {
 		return null;
 	}
 
-    return (
-        <SafeAreaProvider>
-            <ThemeProvider>
-     			<Stack
-    				screenOptions={{
-       					headerShown: false,
-       					animation: 'ios_from_right',
-       					animationDuration: 300,
-       					animationMatchesGesture: true,
-       					statusBarAnimation: 'fade',
-       					statusBarHidden: true,
-    				}}>
-    				<Stack.Screen name="index" />
-     			</Stack>
-    		</ThemeProvider>
-        </SafeAreaProvider>
+	return (
+		<SafeAreaProvider>
+			<ThemeProvider>
+				<Stack
+					screenOptions={{
+						headerShown: false,
+						animation: 'ios_from_right',
+						animationDuration: 300,
+						animationMatchesGesture: true,
+						statusBarAnimation: 'fade',
+						statusBarHidden: true,
+					}}>
+					<Stack.Screen name="index" />
+				</Stack>
+			</ThemeProvider>
+		</SafeAreaProvider>
 	);
 };
 

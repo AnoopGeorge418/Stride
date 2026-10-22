@@ -1,4 +1,1 @@
-export type CorousalProps = {
-    dotCounts: number
-    activeDotPage: string
-}
+export type CorousalProps = { dotCounts: number; activeDotPage: number };

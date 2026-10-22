@@ -1,3 +1,5 @@
 export type CardProps = {
-    content: string,
-}
+	content: string;
+	label?: string;
+	tone?: 'default' | 'accent';
+};

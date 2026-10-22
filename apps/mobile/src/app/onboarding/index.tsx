@@ -1,9 +1,7 @@
-import { View } from "react-native"
+import { View } from 'react-native';
 
 const IndexOnboardingPage = () => {
-    return (
-        <View></View>
-    )
-}
+	return <View></View>;
+};
 
 export default IndexOnboardingPage;
