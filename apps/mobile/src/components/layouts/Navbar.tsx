@@ -35,3 +35,4 @@ export const Navbar = ({ redirectionRoute, showSkip = true }: NavbarProps) => {
 		</View>
 	);
 };
+    
