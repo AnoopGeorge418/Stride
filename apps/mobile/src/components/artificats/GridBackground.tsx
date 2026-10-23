@@ -2,6 +2,7 @@ import { useCustomTheme } from '@/contexts/ThemeContext';
 import React, { useId } from 'react';
 import { StyleProp, View, ViewStyle, StyleSheet } from 'react-native';
 import Svg, { Circle, Defs, Path, Pattern, Rect } from 'react-native-svg';
+import { useSafeAreaInsets, EdgeInsets } from 'react-native-safe-area-context';
 
 export type GridBackgroundProps = {
 	variant?: 'lines' | 'dots';
@@ -12,6 +13,8 @@ export type GridBackgroundProps = {
 	opacity?: number; // 0 - 1
 	style?: StyleProp<ViewStyle>;
 	children?: React.ReactNode;
+	useSafeArea?: boolean; // whether to account for safe area insets
+	edges?: ('top' | 'bottom' | 'left' | 'right')[]; // which edges to pad
 };
 
 export const GridBackground = ({
@@ -23,16 +26,28 @@ export const GridBackground = ({
 	opacity = 0.6,
 	style,
 	children,
+	useSafeArea = false,
+	edges = ['top', 'bottom', 'left', 'right'],
 }: GridBackgroundProps) => {
 	const { theme } = useCustomTheme();
 	const stroke = color ?? theme.borders.default;
+	const insets = useSafeAreaInsets();
 
 	// Unique id per instance so multiple grids on one screen don't collide
 	const reactId = useId();
 	const patternId = `grid-${reactId.replace(/:/g, '')}`;
 
+	const safeAreaStyle: ViewStyle = useSafeArea
+		? {
+				paddingTop: edges.includes('top') ? insets.top : 0,
+				paddingBottom: edges.includes('bottom') ? insets.bottom : 0,
+				paddingLeft: edges.includes('left') ? insets.left : 0,
+				paddingRight: edges.includes('right') ? insets.right : 0,
+		  }
+		: {};
+
 	return (
-		<View style={[styles.container, style]}>
+		<View style={[styles.container, safeAreaStyle, style]}>
 			<Svg
 				style={StyleSheet.absoluteFill}
 				width="100%"
