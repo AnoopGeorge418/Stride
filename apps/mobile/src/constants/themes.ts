@@ -5,9 +5,9 @@
 export const Themes = {
 	LightMode: {
 		surface: {
-			appBackground: '#FFFFFF',
+			appBackground: '#F8FAFC',
 			cardBackground: '#FFFFFF',
-			cardBackgroundHover: '#F9FAFB',
+			cardBackgroundHover: '#F1F5F9',
 			mutedBackground: '#F3F4F6',
 			subtleBackground: '#E5E7EB',
 			buttonBackground: '#000000',
@@ -47,10 +47,10 @@ export const Themes = {
 	DarkMode: {
 		surface: {
 			appBackground: '#000000',
-			cardBackground: '#121212',
-			cardBackgroundHover: '#1E1E1E',
+			cardBackground: '#1F2937',
+			cardBackgroundHover: '#374151',
 			mutedBackground: '#1F2937',
-			subtleBackground: '#2C2C2C',
+			subtleBackground: '#374151',
 			buttonBackground: '#ffffff',
 		},
 		typography: {
@@ -86,3 +86,4 @@ export const Themes = {
 		},
 	},
 } as const;
+

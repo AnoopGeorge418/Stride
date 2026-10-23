@@ -1,4 +1,3 @@
-// src/app/onboarding/index.tsx
 import { Button } from '@/components/artificats/Button';
 import { Card } from '@/components/artificats/Card';
 import { CorousalDots } from '@/components/artificats/corousalDots';

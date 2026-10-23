@@ -1,6 +1,5 @@
-// src/app/index.tsx
 import { Button } from '@/components/artificats/Button';
-import { Card } from '@/components/artificats/Card';
+import { FlowScoreCard } from '@/components/artificats/cards/FlowScoreCard';
 import { CorousalDots } from '@/components/artificats/corousalDots';
 import { GridBackground } from '@/components/artificats/GridBackground';
 import { Footer } from '@/components/layouts/Footer';
@@ -10,39 +9,67 @@ import pixelArrowBlack from '@assets/icons/pixelArrowBlack.png';
 import pixelArrowWhite from '@assets/icons/pixelArrowWhite.png';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-// Data drives the cards. Add or remove entries here, not in JSX.
-const HERO_CARDS: {
-	label?: string;
-	content: string;
-	tone?: 'default' | 'accent';
-}[] = [
-	{ label: 'Flow score', content: '98.4 Peak', tone: 'accent' },
-	{ label: 'Momentum', content: '+34% this week' },
-	{ label: 'Focus', content: '2.4x depth' },
-	{ label: 'Consistency', content: '94%' },
-];
+import { FloatingView } from '@/components/artificats/FloatingView';
+import { AiInsightCard } from '@/components/artificats/cards/AiInsightCard';
+import { SongInfoCard } from '@/components/artificats/cards/SongInfoCard';
+import { MomentumCard } from '@/components/artificats/cards/MomentumCard';
+import { InfoCard } from '@/components/artificats/cards/InfoCard';
+import { RitualsCard } from '@/components/artificats/cards/RitualsCard';
+import { TasksCard } from '@/components/artificats/cards/TasksCard';
 
 const Index = () => {
 	const { theme, themeMode } = useCustomTheme();
 
 	return (
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.surface.appBackground }}>
-            <GridBackground variant="lines" spacing={24} opacity={0.5}>
-    			<View style={{ flex: 1, marginHorizontal: 20, paddingBottom: 20 }}>
-    				<Navbar />
-    				{/* Cards take the free space and sit at the top of it */}
-    				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: 24 }}>
-    					<View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center', }}>
-    						{HERO_CARDS.map((c) => (
-    							<Card
-    								key={c.content}
-    								label={c.label}
-    								content={c.content}
-    								tone={c.tone}
-    							/>
-    						))}
-    					</View>
+            <GridBackground variant="dots" spacing={24} opacity={0.5}>
+    			<View style={{ flex: 1, marginHorizontal: 20, paddingBottom: 20, marginTop: 15 }}>
+                    <Navbar />
+                    {/*cards*/}
+                    <View style={{ flex: 1, paddingTop: 24, justifyContent: "center" }}>
+                        {/*top cards*/}
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <FloatingView amplitude={10} duration={2400}>
+            					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '-4deg' }] }}>
+                                   <FlowScoreCard />
+                                </View>
+                            </FloatingView>
+                            <FloatingView amplitude={10} duration={2400}>
+            					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '4deg' }] }}>
+                                   <AiInsightCard />
+                                </View>
+                            </FloatingView>
+                        </View>
+                        {/*center cards*/}
+                        <View style={{ flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: 10, marginBottom: 10 }}>
+           					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '-4deg' }] }}>
+                                <TasksCard />
+                            </View>
+           					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '4deg' }] }}>
+                                <RitualsCard />
+                            </View>
+                        </View>
+                        {/*bottom cards*/}
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <FloatingView amplitude={10} duration={2400}>
+            					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '8deg' }] }}>
+                                   <SongInfoCard />
+                                </View>
+                            </FloatingView>
+                            <FloatingView amplitude={10} duration={2400}>
+            					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '-8deg' }] }}>
+                                   <MomentumCard />
+                                </View>
+                            </FloatingView>
+                        </View>
+                        {/*last card*/}
+                        <View style={{ justifyContent: "center", alignItems: "center", marginTop: 16 }}>
+                            <FloatingView amplitude={10} duration={2400}>
+            					<View style={{ backgroundColor: theme.surface.cardBackground, borderRadius: 10, transform: [{ rotate: '0deg' }] }}>
+                                   <InfoCard />
+                                </View>
+                            </FloatingView>
+                        </View>
     				</View>
     
     				{/* Hero + button grouped, sitting right above the footer */}
@@ -58,7 +85,7 @@ const Index = () => {
     						</Text>
     					</View>
     
-    					<CorousalDots dotCounts={4} activeDotPage={0} />
+    					<CorousalDots dotCounts={3} activeDotPage={0} />
     
     					<Button
     						content="Get Started"
@@ -67,7 +94,9 @@ const Index = () => {
     						borderRadius={14}
     						textColor={theme.typography.inverseText}
     						backgroundColor={theme.surface.buttonBackground}
-    						icon={ themeMode === 'dark' ? pixelArrowBlack : pixelArrowWhite }
+                            icon={themeMode === 'dark' ? pixelArrowBlack : pixelArrowWhite}
+                            redirectionRoute="/onboarding"
+                            font='GeistMono-Bold'
     					/>
     				</View>
     

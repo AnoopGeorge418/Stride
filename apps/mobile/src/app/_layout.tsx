@@ -1,20 +1,7 @@
 import * as SplashScreen from 'expo-splash-screen';
 import { Stack } from 'expo-router';
-
-import {
-	useFonts,
-	Lora_400Regular,
-	Lora_700Bold,
-	Lora_400Regular_Italic,
-	Lora_700Bold_Italic,
-} from '@expo-google-fonts/lora';
-import {
-	GeistMono_400Regular,
-	GeistMono_700Bold,
-	GeistMono_400Regular_Italic,
-	GeistMono_700Bold_Italic,
-} from '@expo-google-fonts/geist-mono';
-
+import { useFonts, Lora_400Regular, Lora_700Bold, Lora_400Regular_Italic, Lora_700Bold_Italic } from '@expo-google-fonts/lora';
+import { GeistMono_400Regular, GeistMono_700Bold, GeistMono_400Regular_Italic, GeistMono_700Bold_Italic } from '@expo-google-fonts/geist-mono';
 import './global.css';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@/contexts/ThemeContext';
@@ -73,16 +60,16 @@ const RootLayout = () => {
 						animation: 'ios_from_right',
 						animationDuration: 300,
 						animationMatchesGesture: true,
-						statusBarAnimation: 'slide',
-						statusBarHidden: true,
+						// statusBarAnimation: 'slide',
+						// statusBarHidden: true,
 					}}>
 					<Stack.Screen name="index" />
 				</Stack>
-				<StatusBar
+				{/*<StatusBar
 					hidden={true}
 					animated={true}
 					hideTransitionAnimation="slide"
-				/>
+				/>*/}
 			</ThemeProvider>
 		</SafeAreaProvider>
 	);
