@@ -1,7 +1,6 @@
 import { GridBackground } from '@/components/artificats/GridBackground';
 import { useCustomTheme } from '@/contexts/ThemeContext';
 import { Text, View } from 'react-native';
-
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 

@@ -9,5 +9,6 @@ export type ButtonProps = {
 	borderRadius?: number;
 	textColor?: string;
 	backgroundColor?: string;
-	icon?: ImageSourcePropType;
+    icon?: ImageSourcePropType;
+    font?: string
 };

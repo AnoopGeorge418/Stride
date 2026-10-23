@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Logo } from '../artificats/Logo';
 import { Button } from '../artificats/Button';
 import { Card } from '../artificats/Card';
@@ -7,7 +7,7 @@ import { Href } from 'expo-router';
 
 type NavbarProps = { redirectionRoute?: Href; showSkip?: boolean };
 
-export const Navbar = ({ redirectionRoute, showSkip = true }: NavbarProps) => {
+export const Navbar = ({ redirectionRoute }: NavbarProps) => {
 	const { theme } = useCustomTheme();
 
 	return (
@@ -18,21 +18,17 @@ export const Navbar = ({ redirectionRoute, showSkip = true }: NavbarProps) => {
 			</View>
 
 			{/*version & skip*/}
-			<View className="flex flex-row gap-2 justify-center items-center ">
-				<Card
-					content="V1.0"
-					contentColor={theme.typography.subtleText}
-					cardBackgroundColor={theme.interactive.secondaryBackground}
-				/>
-				{showSkip && (
-					<Button
-						content="Skip"
-						redirectionRoute={redirectionRoute}
-						textColor={theme.typography.mainHeading}
-					/>
-				)}
+			<View className="flex flex-row justify-center items-center ">
+                <Card style={{ backgroundColor: theme.surface.subtleBackground, padding: 4, paddingHorizontal: 10 }}>
+                    <Text style={{ color: theme.typography.subtleText }}>V1.0</Text>
+                </Card>
+                <Button
+                    content='SKIP'
+                    redirectionRoute="/onboarding"
+                    textColor={theme.typography.mutedText}
+                    font='GeistMono'
+                />
 			</View>
 		</View>
 	);
 };
-    
