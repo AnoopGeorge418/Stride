@@ -19,6 +19,7 @@ import './global.css';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 // keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -72,11 +73,16 @@ const RootLayout = () => {
 						animation: 'ios_from_right',
 						animationDuration: 300,
 						animationMatchesGesture: true,
-						statusBarAnimation: 'fade',
+						statusBarAnimation: 'slide',
 						statusBarHidden: true,
 					}}>
 					<Stack.Screen name="index" />
 				</Stack>
+				<StatusBar
+					hidden={true}
+					animated={true}
+					hideTransitionAnimation="slide"
+				/>
 			</ThemeProvider>
 		</SafeAreaProvider>
 	);
